@@ -113,3 +113,43 @@ a:hover{
 .product-rating{
     margin-bottom: 1rem;
 }
+
+/* SideBar */
+.brand button{
+    background-color: white;
+    font-size: 2rem;
+    border:none;
+    margin: 1rem;
+    cursor: pointer;
+}
+.sidebar{
+    position:fixed;
+    transform: translateX(-30rem);
+    width: 30rem;
+    background-color:rgb(192, 194, 233);
+    height: 100%;
+}
+.sidebar.open{
+    transform: translateX(0);
+}
+.sidebar-close-button{
+    border-radius: 50%;
+    border:0.1rem black solid;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 1.5rem;
+    right:0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    padding-top: 0rem;
+}
+.sidebar ul{
+    list-style-type: none;
+    line-height: 2rem;
+    font-size: 1.8.rem;
+}
+.sidebar-heading{
+    padding-left: 3.5rem;
+    font-weight: bold;
+}

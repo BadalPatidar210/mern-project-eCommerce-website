@@ -10,6 +10,7 @@
  <div class="grid-container">
     <header class="header">
         <div class="brand">
+            <button onclick="openMenu()">&#9776</button>
             <a href="./index.html">BookStore</a>
         </div>
         <div class="header-links">
@@ -17,6 +18,18 @@
             <a href="signin.html">SignIn</a>
         </div>
     </header>
+    
+    <aside class="sidebar">
+        <h3 class="sidebar-heading">Books Categories</h3>
+        <button class="sidebar-close-button" onclick="closeMenu()">X</button>
+        <ul>
+            <li>Action</li>
+            <li>Adventure</li>
+            <li>Comics</li>
+            <li>Love Stories</li>
+        </ul>
+    </aside>
+
     <main class="main"> 
         <div class="content">
             <ul class="products">
@@ -116,6 +129,14 @@
         All Rights Reserved
     </footer>
  </div>
+ <script>
+ function openMenu(){
+     document.querySelector(".sidebar").classList.add("open");
+ }
+ function closeMenu(){
+     document.querySelector(".sidebar").classList.remove("open");
+ }
+ </script>
 
     
 </body>
