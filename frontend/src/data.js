@@ -1,0 +1,44 @@
+export default {
+    products:[
+    {
+        _id:1,
+        name:"Avenger",
+        category:"Comic",
+        image:"/images/d1.jpg",
+        price:"$20",
+        rating:"4.5",
+        numReviews:"10",
+        status:"Available"
+    },
+    {
+        _id:2,
+        name:"Hatim",
+        category:"Comic",
+        image:"/images/d1.jpg",
+        price:"$10",
+        rating:"4.8",
+        numReviews:"100",
+        status:"Available"
+    },
+    {
+        _id:3,
+        name:"Shaktimaan",
+        category:"Comic",
+        image:"/images/d1.jpg",
+        price:"$40",
+        rating:"5.0",
+        numReviews:"120",
+        status:"Available"
+    },
+    {
+        _id:4,
+        name:"Avenger",
+        category:"Comic",
+        image:"/images/d1.jpg",
+        price:"$20",
+        rating:"4.5",
+        numReviews:"10",
+        status:"Available"
+    },
+]
+}
