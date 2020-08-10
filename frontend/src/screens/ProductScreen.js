@@ -14,7 +14,7 @@ function ProductScreen(props){
             </div>
             <div className="details-info">
                 <ul>
-                    <li>
+                    <li key={product._id}>
                         <h4>{product.name}</h4>
                     </li>
                     <li>
