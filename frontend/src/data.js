@@ -8,7 +8,7 @@ export default {
         price:"$20",
         rating:"4.5",
         numReviews:"10",
-        status:"Available"
+        countInStock:2,
     },
     {
         _id:2,
@@ -18,7 +18,7 @@ export default {
         price:"$10",
         rating:"4.8",
         numReviews:"100",
-        status:"Available"
+        countInStock:0,
     },
     {
         _id:3,
@@ -28,7 +28,7 @@ export default {
         price:"$40",
         rating:"5.0",
         numReviews:"120",
-        status:"Available"
+        countInStock:3
     },
     {
         _id:4,
@@ -38,7 +38,7 @@ export default {
         price:"$20",
         rating:"4.5",
         numReviews:"10",
-        status:"Available"
+        countInStock:5
     },
 ]
 }
