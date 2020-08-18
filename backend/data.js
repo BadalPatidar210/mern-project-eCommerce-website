@@ -26,7 +26,7 @@ export default {
         _id:3,
         name:"Shaktimaan",
         category:"Comic",
-        image:"/images/d1.jpg",
+        image:"/images/d2.jpg",
         price:40,
         rating:"5.0",
         numReviews:"120",
