@@ -72,12 +72,10 @@ const deleteProduct = (productId) => async (dispatch, getState) => {
     dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
     const { data } = await axios.delete("/api/products/" + productId, {
       headers: {
-        Authorization: "Bearer" + userInfo.token,
+        Authorization: "Bearer " + userInfo.token,
       },
     });
-    console.log(data);
     dispatch({ type: PRODUCT_DELETE_SUCCESS, payload: data, success: true });
-    console.log("data:" + data);
   } catch (error) {
     dispatch({ type: PRODUCT_DELETE_FAIL, payload: error.message });
   }

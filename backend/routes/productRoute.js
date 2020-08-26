@@ -9,6 +9,15 @@ router.get("/", async (req, res) => {
   res.send(products);
 });
 
+router.get("/:id", async (req, res) => {
+  const product = await Product.findOne({ _id: req.params.id });
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: "Product Not Found." });
+  }
+});
+
 router.post("/", isAuth, isAdmin, async (req, res) => {
   const product = new Product({
     name: req.body.name,
@@ -24,7 +33,7 @@ router.post("/", isAuth, isAdmin, async (req, res) => {
   const newProduct = await product.save();
   if (newProduct) {
     return res
-      .status(201)
+      .status(200)
       .send({ message: "New Product Created.", data: newProduct });
   }
   return res.status(500).send({ message: "Error in Creating Product." });
@@ -32,7 +41,7 @@ router.post("/", isAuth, isAdmin, async (req, res) => {
 
 router.put("/:id", isAuth, isAdmin, async (req, res) => {
   const productId = req.params.id;
-  const product = await Product.findById({ _id: productId });
+  const product = await Product.findById(productId);
   if (product) {
     product.name = req.body.name;
     product.category = req.body.category;
@@ -54,9 +63,7 @@ router.put("/:id", isAuth, isAdmin, async (req, res) => {
 });
 
 router.delete("/:id", isAuth, isAdmin, async (req, res) => {
-  console.log("delete ");
   const deletedProduct = await Product.findById(req.params.id);
-  console.log("yaha tak aaya " + deletedProduct);
   if (deletedProduct) {
     await deletedProduct.remove();
     res.send({ message: "Product Deleted" });

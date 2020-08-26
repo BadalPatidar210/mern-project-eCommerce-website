@@ -56,7 +56,6 @@ function productDeleteReducer(state = { product: {} }, action) {
     case PRODUCT_DELETE_REQUEST:
       return { loading: true };
     case PRODUCT_DELETE_SUCCESS:
-      console.log("Success tak pahucha");
       return { loading: false, product: action.payload, success: true };
     case PRODUCT_DELETE_FAIL:
       return { loading: false, error: action.payload };

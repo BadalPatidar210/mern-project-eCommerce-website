@@ -74,7 +74,6 @@ function ProductsScreen(props) {
   };
   const deleteHandler = (product) => {
     dispatch(deleteProduct(product._id));
-    console.log("dispatch ho gya");
   };
 
   return (

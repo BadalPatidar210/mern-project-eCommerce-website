@@ -8,6 +8,9 @@ import SigninScreen from "./screens/SigninScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import "./App.css";
 import ProductsScreen from "./screens/ProductsScreen";
+import ShippingScreen from "./screens/ShippingScreen";
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
@@ -29,9 +32,28 @@ function App() {
             <Link to="/">BookStore</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
+            <Link to="/cart">
+              <i className="fas fa-shopping-cart fa-1.5x" />
+            </Link>
             {userInfo ? (
-              <Link to="/profile">{userInfo.name}</Link>
+              <>
+                <Link to="/profile">
+                  {userInfo.name && (
+                    <>
+                      <i className="fas fa-user-alt fa-1.5x" />
+                    </>
+                  )}
+                </Link>
+                <Link to="/">
+                  {userInfo ? (
+                    <>
+                      <i className="fa fa-sign-out-alt fa-1.5x" />
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </Link>
+              </>
             ) : (
               <Link to="/signin">SignIn</Link>
             )}
@@ -53,7 +75,10 @@ function App() {
 
         <main className="main">
           <div className="content">
+            <Route path="/placeorder" component={PlaceOrderScreen} />
+            <Route path="/payment" component={PaymentScreen} />
             <Route path="/products" component={ProductsScreen} />
+            <Route path="/shipping" component={ShippingScreen} />
             <Route path="/register" component={RegisterScreen} />
             <Route path="/signin" component={SigninScreen} />
             <Route path="/product/:id" component={ProductScreen} />
