@@ -1,5 +1,4 @@
 import express from "express";
-import data from "./data.js";
 import cors from "cors";
 import config from "./config";
 import dotenv, { parse } from "dotenv";
@@ -7,6 +6,7 @@ import mongoose from "mongoose";
 import userRoute from "./routes/userRoute";
 import bodyParser from "body-parser";
 import productRoute from "./routes/productRoute";
+import orderRoute from "./routes/orderRoute";
 dotenv.config();
 const mongodbUrl = config.MONGODB_URL;
 
@@ -15,7 +15,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-  })
+  }).
+  then(console.log("db connected"))
   .catch((error) => console.log(error.reason));
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(cors());
 
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
+app.use("/api/orders", orderRoute);
 // app.get("/api/products", (req, res) => {
 //   res.send(data.products);
 // });

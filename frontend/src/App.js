@@ -11,6 +11,9 @@ import ProductsScreen from "./screens/ProductsScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen  from "./screens/OrderScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import OrdersScreen from "./screens/OrdersScreen";
 
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
@@ -44,18 +47,20 @@ function App() {
                     </>
                   )}
                 </Link>
-                <Link to="/">
-                  {userInfo ? (
-                    <>
-                      <i className="fa fa-sign-out-alt fa-1.5x" />
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </Link>
               </>
             ) : (
               <Link to="/signin">SignIn</Link>
+            )}
+             {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <a href="#"  >Admin</a>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                    <Link to="/products">Products</Link>
+                  </li>
+                </ul>
+              </div>
             )}
           </div>
         </header>
@@ -75,6 +80,9 @@ function App() {
 
         <main className="main">
           <div className="content">
+
+            <Route path="/orders" component={OrdersScreen} />
+            <Route path="/profile" component={ProfileScreen} />
             <Route path="/placeorder" component={PlaceOrderScreen} />
             <Route path="/payment" component={PaymentScreen} />
             <Route path="/products" component={ProductsScreen} />
@@ -82,6 +90,7 @@ function App() {
             <Route path="/register" component={RegisterScreen} />
             <Route path="/signin" component={SigninScreen} />
             <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/order/:id" component={OrderScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
           </div>

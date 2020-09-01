@@ -16,8 +16,7 @@ function RegisterScreen(props) {
     ? props.location.search.split("=")[1]
     : "/signin";
   useEffect(() => {
-    if (userInfo) {
-      console.log(redirect);
+    if(userInfo) {
       props.history.push(redirect);
     }
     return () => {
