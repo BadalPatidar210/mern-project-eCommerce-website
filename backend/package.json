@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --exec babel-node server.js",
-    "build": "babel backend -d dist",
-    "heroku-postbuild": "npm run build && cd frontend && npm install && npm run build",
+    "start": "babel-node server.js",
     "dev": "nodemon --watch server.js --exec babel-node server.js"
   },
   "keywords": [],
