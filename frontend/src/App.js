@@ -11,7 +11,7 @@ import ProductsScreen from "./screens/ProductsScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
-import OrderScreen  from "./screens/OrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import OrdersScreen from "./screens/OrdersScreen";
 
@@ -32,7 +32,7 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">BookStore</Link>
+            <Link to="/">eBookplace </Link>
           </div>
           <div className="header-links">
             <Link to="/cart">
@@ -51,9 +51,9 @@ function App() {
             ) : (
               <Link to="/signin">SignIn</Link>
             )}
-             {userInfo && userInfo.isAdmin && (
+            {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
-                <a href="#"  >Admin</a>
+                <a href="#">Admin</a>
                 <ul className="dropdown-content">
                   <li>
                     <Link to="/orders">Orders</Link>
@@ -65,7 +65,7 @@ function App() {
           </div>
         </header>
 
-        <aside className="sidebar">
+        {/* <aside className="sidebar">
           <h3 className="sidebar-heading">Books Categories</h3>
           <button className="sidebar-close-button" onClick={closeMenu}>
             X
@@ -76,11 +76,10 @@ function App() {
             <li>Comics</li>
             <li>Love Stories</li>
           </ul>
-        </aside>
+        </aside> */}
 
         <main className="main">
           <div className="content">
-
             <Route path="/orders" component={OrdersScreen} />
             <Route path="/profile" component={ProfileScreen} />
             <Route path="/placeorder" component={PlaceOrderScreen} />

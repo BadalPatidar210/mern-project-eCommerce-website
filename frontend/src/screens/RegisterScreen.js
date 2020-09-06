@@ -16,7 +16,7 @@ function RegisterScreen(props) {
     ? props.location.search.split("=")[1]
     : "/signin";
   useEffect(() => {
-    if(userInfo) {
+    if (userInfo) {
       props.history.push(redirect);
     }
     return () => {
@@ -87,7 +87,9 @@ function RegisterScreen(props) {
             <Link
               to={redirect === "/" ? "signin" : "signin?redirect=" + redirect}
               className=" button text-center secondary"
-            ></Link>
+            >
+              Login
+            </Link>
           </li>
         </ul>
       </form>

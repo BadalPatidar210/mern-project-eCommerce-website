@@ -271,12 +271,14 @@ a:hover {
 }
 .details-image {
   flex: 2 1 20rem;
+  margin-right: 1rem;
 }
 .details-info {
   flex: 1 1 35rem;
+  margin-right: 2rem;
 }
 .details-action {
-  flex: 1 1 25rem;
+  flex: 1 1 20rem;
 }
 .details-image img {
   widows: 100%;
@@ -296,6 +298,7 @@ a:hover {
 .details-action li {
   margin-bottom: 1rem;
   font-size: 1.6rem;
+  text-align: justify;
 }
 .details-action {
   border: 0.1rem #808080 solid;
@@ -337,6 +340,7 @@ a:hover {
   background-color: #f0f0f0;
   border-radius: 0.5rem;
   padding: 1rem;
+  font-size: 1.5rem;
 }
 .cart-list-container {
   padding: 0;
@@ -346,7 +350,6 @@ a:hover {
 .cart-list-container li {
   display: flex;
   justify-content: space-between;
-
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 0.1rem #c0c0c0 solid;
@@ -359,12 +362,14 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  font-size: 2rem;
 }
 .cart-image {
   flex: 1 1;
 }
 .cart-name {
   flex: 8 1;
+  font-size: 1.5rem;
 }
 .cart-price {
   flex: 1 1;
@@ -403,6 +408,7 @@ a:hover {
   flex-direction: column;
   margin-bottom: 1rem;
 }
+
 input {
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
@@ -433,6 +439,7 @@ input {
 }
 .table {
   width: 100%;
+  font-size: 1.3rem;
 }
 th {
   text-align: left;
@@ -483,6 +490,7 @@ tbody > tr:nth-child(odd) {
   background-color: #fcfcfc;
   padding: 1rem;
   margin: 1rem;
+  font-size: 1.7rem;
 }
 .placeorder-info > div:first-child {
   margin-top: 0;
@@ -504,34 +512,34 @@ tbody > tr:nth-child(odd) {
 
 /* Profile */
 
-.profile{
+.profile {
   display: flex;
   flex-wrap: wrap;
 }
 
-.profile-info{
+.profile-info {
   flex: 1 1 30rem;
 }
-.profile-orders{
+.profile-orders {
   flex: 3 1 60rem;
 }
 
 /* admin */
-.dropdown{
+.dropdown {
   display: inline-block;
   position: relative;
 }
-.dropdown-content{
+.dropdown-content {
   position: absolute;
   display: none;
-  right:0;
+  right: 0;
   padding: 1rem;
   list-style-type: none;
   z-index: 1;
   background-color: #203040;
-  margin:0;
-  margin-top:0.4rem;
+  margin: 0;
+  margin-top: 0.4rem;
 }
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content {
   display: block;
 }
